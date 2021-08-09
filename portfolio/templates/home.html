@@ -15,76 +15,85 @@
 
 <style>
     video {
-    max-width: 100%;
+        max-width: 100%;
     }
 
+    button {
+      box-shadow: 2px 2px 2px black;
+    }
 
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-info">
-  <!-- Brand/logo -->
-  <a class="navbar-brand" href="{% url 'home' %}">Devin Baack's Portfolio</a>
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li style="padding-left: 20px;" class="nav-item">
-      <a class="btn btn-secondary" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank">Resume</a>
-    </li>
-  </ul>
-</nav>
 
-<div class="bg-light">
-    <br>
-    <br>
-    <br>
-</div>
+    <nav class="navbar navbar-expand navbar-dark bg-info">
+      <!-- Brand/logo -->
+      <a style="text-shadow: 2px 2px 2px black;" class="navbar-brand" href="{% url 'home' %}">Devin Baack's Portfolio</a>
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li style="padding-left: 20px;" class="nav-item">
+          <button class="btn btn-secondary" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank">Resume</button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="p-5 text-center bg-image" style="background-image: media/portfolio/videos/TDAmeritrade.jpg">
+
+    </div>
 
 
-<body class="bg-info">
-    {% for project in projects %}
+    <body class="bg-info">
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+            {% for project in projects %}
 
-        <div class="card" style="width: 25rem;">
-            <h4 class="card-header">{{ project.title }}</h4>
-          <video src="media/{{ project.video }}" controls></video>
-          <div class="card-body">
+                <div class="col mb-4" style="padding-top: 10px;">
+                    <div class="card mx-auto" style="width: 25rem; box-shadow: 5px 5px 5px black;">
+                        <h4 class="card-header">{{ project.title }}</h4>
+                      <video src="media/{{ project.video }}" controls></video>
+                      <div class="card-body">
 
-            <h6 class="card-text">Tools: {{ project.tools }}</h6>
-              <p class="card-title">{{ project.description }}</p>
-            <button href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{forloop.counter0}}" >Read More About This Project</button>
-              <a href="{{ project.github }}" target="_blank" class="btn btn-primary">GitHub</a>
-          </div>
+                        <h6 class="card-text">Tools: {{ project.tools }}</h6>
+                          <p class="card-title">{{ project.description }}</p>
+                        <button href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal{{forloop.counter0}}" >Read More About This Project</button>
+                          <button href="{{ project.github }}" target="_blank" class="btn btn-info">GitHub</button>
+                      </div>
+                    </div>
+                </div>
+
+
+
+                             <div class="modal fade" id="myModal{{forloop.counter0}}">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">{{ project.title }}</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <p>{{ project.writeUp|safe }}</p>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+            {% endfor %}
+
         </div>
 
-
-
-                     <div class="modal fade" id="myModal{{forloop.counter0}}">
-            <div class="modal-dialog">
-              <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <h4 class="modal-title">{{ project.title }}</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                  <p>{{ project.writeUp|safe }}</p>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-    {% endfor %}
+    </div>
+    </body>
 
 
 
-
-</body>
 </html>
