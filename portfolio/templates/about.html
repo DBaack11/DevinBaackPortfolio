@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>About Devin Baack</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<style>
+    video {
+        max-width: 100%;
+    }
+
+    button {
+      box-shadow: 2px 2px 2px black;
+    }
+
+    .navLink {
+        box-shadow: 2px 2px 2px black;
+    }
+
+    .bg-cover {
+        background-size: cover !important;
+        height: 300px;
+        border-bottom: 5px double black;
+
+    }
+
+    h3 {
+        max-width: 80%;
+        text-indent: 50px;
+        margin: 0 auto;
+    }
+
+
+</style>
+
+
+    <nav class="navbar navbar-expand navbar-dark bg-info fixed-top ">
+      <!-- Brand/logo -->
+      <a style="text-shadow: 2px 2px 2px black;" class="navbar-brand" href="{% url 'home' %}">Devin Baack's Portfolio</a>
+      <!-- Links -->
+      <ul class="navbar-nav">
+         <li style="padding-left: 20px;" class="nav-item">
+          <a class="btn btn-secondary navLink" href="{% url 'home' %}">Home</a>
+        </li>
+
+          <li style="padding-left: 20px;" class="nav-item">
+              <a class="btn btn-secondary navLink" href="{% url 'about' %}">About</a>
+          </li>
+
+          <li style="padding-left: 20px;" class="nav-item">
+          <a class="btn btn-secondary navLink" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank">Resume</a>
+        </li>
+      </ul>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+
+
+
+    <div class="p-5 jumbotron text-center bg-image bg-cover" style="background: linear-gradient(rgba(23, 162, 184, 1), rgba(0, 0, 0, 0)), url('https://i.ibb.co/QFKyzs9/mesh-1430107.png');">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3"><u>About Devin Baack</u></h1>
+                    <h6>Email | dfbaack@gmail.com</h6>
+                    <h6>Phone Number | (712) 210-5392</h6>
+                </div>
+            </div>
+
+    </div>
+
+<body class="bg-info">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white" >
+                    <h3>Devin Baack is a Carroll, Iowa native and currently resides in Ames, Iowa
+                        studying Computer Science at Des Moines Area Community College (DMACC). Since 2015 Devin
+                        has gained experience in various occupations such as food, sales, customer service, and
+                        information technology.</h3>
+
+                    <br>
+                    <br>
+
+                    <h3>Devin attended Iowa State University for two semesters, majoring in Computer Science
+                        before transferring to DMACC. Since then, he has completed a Computer Languages Diploma
+                        and is currently finishing his remaining 6 credits towards his Associate in Applied Science
+                        Degree in Computer Information Systems, which will be completed in December of 2021.</h3>
+
+                    <br>
+                    <br>
+
+                    <center>
+                        <a class="btn btn-secondary navLink btn-lg" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank">View Resume</a>
+                    </center>
+
+                </div>
+            </div>
+    </div>
+
+</body>
+</html>

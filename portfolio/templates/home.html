@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Portfolio</title>
+    <title>Devin Baack</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!--    <link rel="stylesheet" type="text/css" href="personal_portfolio-project/portfolio/templates/stylesheet.css">  -->
+
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -22,21 +22,58 @@
       box-shadow: 2px 2px 2px black;
     }
 
+    .navLink {
+        box-shadow: 2px 2px 2px black;
+    }
+
+    .bg-cover {
+        background-size: cover !important;
+        height: 300px;
+        border-bottom: 5px double black;
+
+    }
+
+
 </style>
 
 
-    <nav class="navbar navbar-expand navbar-dark bg-info">
+    <nav class="navbar navbar-expand navbar-dark bg-info fixed-top ">
       <!-- Brand/logo -->
       <a style="text-shadow: 2px 2px 2px black;" class="navbar-brand" href="{% url 'home' %}">Devin Baack's Portfolio</a>
       <!-- Links -->
       <ul class="navbar-nav">
-        <li style="padding-left: 20px;" class="nav-item">
-          <button class="btn btn-secondary" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank">Resume</button>
+          <li style="padding-left: 20px;" class="nav-item">
+          <a class="btn btn-secondary navLink" href="{% url 'home' %}">Home</a>
         </li>
+
+          <li style="padding-left: 20px;" class="nav-item">
+              <a class="btn btn-secondary navLink" href="{% url 'about' %}">About</a>
+          </li>
+
+          <li style="padding-left: 20px;" class="nav-item">
+          <a class="btn btn-secondary navLink" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank">Resume</a>
+        </li>
+
+
       </ul>
     </nav>
 
-    <div class="p-5 text-center bg-image" style="background-image: media/portfolio/videos/TDAmeritrade.jpg">
+    <br>
+    <br>
+    <br>
+
+
+
+    <div class="p-5 jumbotron text-center bg-image bg-cover" style="background: linear-gradient(rgba(23, 162, 184, 1), rgba(0, 0, 0, 0)), url('https://i.ibb.co/QFKyzs9/mesh-1430107.png');">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3"><u>Devin Baack</u></h1>
+                    <h6 class="mb-4">A native of Carroll, Iowa, Devin Baack currently resides in Ames, Iowa <br> completing
+                        his A.A.S. in Computer Information Systems.</h6>
+                    <h6>Displayed below is a variety of projects developed by Devin, <br>demonstrating his experience and current skillset.</h6>
+
+                </div>
+            </div>
 
     </div>
 
@@ -55,7 +92,7 @@
                         <h6 class="card-text">Tools: {{ project.tools }}</h6>
                           <p class="card-title">{{ project.description }}</p>
                         <button href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal{{forloop.counter0}}" >Read More About This Project</button>
-                          <button href="{{ project.github }}" target="_blank" class="btn btn-info">GitHub</button>
+                          <a href="{{ project.github }}" target="_blank" class="btn btn-info navLink">GitHub</a>
                       </div>
                     </div>
                 </div>
