@@ -33,6 +33,35 @@
 
     }
 
+    @media only screen and (max-width: 536px) {
+
+        .navbar {
+          display: inline-block;
+        }
+
+        .navbar a {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar .nav-item {
+            width: 100%;
+        }
+
+
+    }
+
+    @media only screen and (max-width: 420px) {
+        h1 {
+            color: green;
+        }
+
+        .jumbotron {
+            width: 55vh;
+        }
+
+    }
+
 
 </style>
 
@@ -42,7 +71,7 @@
       <a style="text-shadow: 2px 2px 2px black;" class="navbar-brand" href="{% url 'home' %}">Devin Baack's Portfolio</a>
       <!-- Links -->
       <ul class="navbar-nav">
-          <li style="padding-left: 20px;" class="nav-item">
+          <li class="nav-item">
           <a class="btn btn-secondary navLink" href="{% url 'home' %}">Home</a>
         </li>
 
@@ -64,7 +93,8 @@
 
 
 
-    <div class="p-5 jumbotron text-center bg-image bg-cover" style="background: linear-gradient(rgba(23, 162, 184, 1), rgba(0, 0, 0, 0)), url('https://i.ibb.co/QFKyzs9/mesh-1430107.png');">
+    <div class="p-5 jumbotron text-center bg-image bg-cover" style="background: linear-gradient(rgba(23, 162, 184, 1), rgba(0, 0, 0, 0)), url('https://i.ibb.co/QFKyzs9/mesh-1430107.png'); ">
+         <div class="container">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-white">
                     <h1 class="mb-3"><u>Devin Baack</u></h1>
@@ -74,7 +104,7 @@
 
                 </div>
             </div>
-
+        </div>
     </div>
 
 
@@ -131,6 +161,7 @@
     </div>
     </body>
 
-
+        <br>
+        <br>
 
 </html>

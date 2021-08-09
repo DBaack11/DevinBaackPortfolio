@@ -39,6 +39,35 @@
         margin: 0 auto;
     }
 
+        @media only screen and (max-width: 536px) {
+
+        .navbar {
+          display: inline-block;
+        }
+
+        .navbar a {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar .nav-item {
+            width: 100%;
+        }
+
+
+    }
+
+    @media only screen and (max-width: 420px) {
+        h1 {
+            color: green;
+        }
+
+        .jumbotron {
+            width: 55vh;
+        }
+
+    }
+
 
 </style>
 
@@ -48,7 +77,7 @@
       <a style="text-shadow: 2px 2px 2px black;" class="navbar-brand" href="{% url 'home' %}">Devin Baack's Portfolio</a>
       <!-- Links -->
       <ul class="navbar-nav">
-         <li style="padding-left: 20px;" class="nav-item">
+         <li class="nav-item">
           <a class="btn btn-secondary navLink" href="{% url 'home' %}">Home</a>
         </li>
 
@@ -102,6 +131,9 @@
                     <center>
                         <a class="btn btn-secondary navLink btn-lg" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank">View Resume</a>
                     </center>
+
+                    <br>
+                    <br>
 
                 </div>
             </div>
