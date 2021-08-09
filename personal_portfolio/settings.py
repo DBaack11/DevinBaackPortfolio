@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'scpgm-gbb*w37p!z5c3*5(f1z)90cb)9+-13fl@9**&^(fhm7p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dbaack11.pythonanywhere.com']
 
 
 # Application definition
