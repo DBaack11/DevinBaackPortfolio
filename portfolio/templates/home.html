@@ -118,8 +118,8 @@
                         <div class="card-body text-center">
 
                             {% if project.video|slice:":9" == "https://i"  %}
-                                <a style="margin-top: -1.5rem;" href="{{ project.image }}" target="_blank" class="btn btn-info btn-sm navLink">View Full Image</a>
-                                <hr class="mt-0">
+                                <a style="display: block; margin-top: -1rem;" href="{{ project.image }}" target="_blank" >View Full Image</a>
+                                <hr class="mt-1">
                             {% endif %}
 
                         <h6 class="card-text">Tools: {{ project.tools }}</h6>
