@@ -22,9 +22,11 @@
       box-shadow: 2px 2px 2px black;
     }
 
+
     .navLink {
         box-shadow: 2px 2px 2px black;
     }
+
 
     .bg-cover {
         background-size: cover !important;
@@ -109,20 +111,25 @@
             {% for project in projects %}
 
                 <div class="col mb-4" style="padding-top: 10px;">
-                    <div class="card mx-auto" style="width: 25rem; height: 30rem; box-shadow: 5px 5px 5px black;">
+                    <div class="card mx-auto" style="width: 25rem; height: 32rem; box-shadow: 5px 5px 5px black;">
                         <h4 class="card-header">{{ project.title }}</h4>
 
                         <iframe style="height: 18rem;" src="{{ project.video }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <div class="card-body">
+                        <div class="card-body text-center">
+
+                            {% if project.video|slice:":9" == "https://i"  %}
+                                <a style="margin-top: -1.5rem;" href="{{ project.image }}" target="_blank" class="btn btn-info btn-sm navLink">View Full Image</a>
+                                <hr class="mt-0">
+                            {% endif %}
 
                         <h6 class="card-text">Tools: {{ project.tools }}</h6>
                           <p class="card-title">{{ project.description|safe }}
-                               {% if project.video|slice:":9" == "https://i"  %}
-                                <a href="{{ project.video }}" target="_blank" class="btn btn-info navLink">View Full Image</a>
-                              {% endif %}
+
                           </p>
-                        <button href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal{{forloop.counter0}}" >Read More About This Project</button>
-                          <a href="{{ project.github }}" target="_blank" class="btn btn-info navLink">GitHub</a>
+                            <hr>
+
+                            <button class="btn btn-info" data-toggle="modal" data-target="#myModal{{forloop.counter0}}" >Read More About This Project</button>
+                            <a href="{{ project.github }}" target="_blank" class="btn btn-info navLink">GitHub</a>
                       </div>
                     </div>
                 </div>
