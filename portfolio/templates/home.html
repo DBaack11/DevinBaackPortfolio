@@ -69,7 +69,6 @@
         }
     }
 
-
 </style>
 
 
@@ -142,7 +141,13 @@
                           </p>
                             <hr>
 
+<!--                            <script>-->
                             <button class="btn btn-info" data-toggle="modal" data-target="#myModal{{forloop.counter0}}" >Read More About This Project</button>
+<!--                            </script>-->
+<!--                            <noscript>-->
+<!--                                <a class="btn btn-info navLink" href="{% url 'about' %}">Read More About This Project</a>-->
+<!--                            </noscript>-->
+
                             <a href="{{ project.github }}" target="_blank" class="btn btn-info navLink">GitHub</a>
                       </div>
                     </div>
@@ -173,12 +178,11 @@
                     </div>
                   </div>
 
-
             {% endfor %}
 
+                </div>
+            </div>
         </div>
-
-    </div>
     </body>
 
         <br>
