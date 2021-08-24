@@ -124,13 +124,17 @@
                     <div class="card mx-auto" style="width: 25rem; height: 32rem; box-shadow: 5px 5px 5px black;">
                         <h4 class="card-header">{{ project.title }}</h4>
 
-                        <iframe style="height: 18rem;" src="{{ project.video }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <div class="card-body text-center">
-
-                            {% if project.video|slice:":9" == "https://i"  %}
+                        {% if project.video|slice:":9" == "https://i"  %}
+                            <img style="height: 14rem;" src="{{ project.video }}" alt="Portfolio-About-Page"/>
+                            <div class="card-body text-center">
                                 <a style="display: block; margin-top: -1rem;" href="{{ project.image }}" target="_blank" >View Full Image</a>
                                 <hr class="mt-1">
-                            {% endif %}
+
+                        {% else %}
+                            <iframe style="height: 18rem;" src="{{ project.video }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="card-body text-center">
+
+                        {% endif %}
 
                         <h6 class="card-text">Tools: {{ project.tools }}</h6>
                           <p class="card-title">{{ project.description|safe }}
@@ -152,7 +156,7 @@
                         <!-- Modal Header -->
                         <div class="modal-header">
                           <h4 class="modal-title">{{ project.title }}</h4>
-
+                            <h4><a href="#" data-dismiss="modal">x</a></h4>
                         </div>
 
                         <!-- Modal body -->
