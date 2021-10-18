@@ -36,6 +36,7 @@
         box-shadow: 2px 2px 2px black;
     }
 
+
     .bg-cover {
         background-size: cover !important;
         height: 300px;
@@ -49,7 +50,15 @@
         margin: 0 auto;
     }
 
-        @media only screen and (max-width: 536px) {
+    .shadow {
+        text-shadow: 3px 3px 2px black;
+    }
+
+    .shadow-sm {
+        text-shadow: 1.5px 1.5px black;
+    }
+
+    @media only screen and (max-width: 536px) {
 
         .navbar {
           display: inline-block;
@@ -83,15 +92,15 @@
       <!-- Links -->
       <ul class="navbar-nav">
          <li class="nav-item">
-          <a class="btn btn-secondary navLink" href="{% url 'home' %}">Home</a>
+          <a class="btn btn-secondary navLink" href="{% url 'home' %}" style="background-color: #E05D5D">Home</a>
         </li>
 
           <li style="padding-left: 20px;" class="nav-item">
-              <a class="btn btn-secondary navLink" href="{% url 'about' %}">About</a>
+              <a class="btn btn-secondary navLink" href="{% url 'about' %}" style="background-color: #E05D5D">About</a>
           </li>
 
           <li style="padding-left: 20px;" class="nav-item">
-          <a class="btn btn-secondary navLink" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank">Resume</a>
+          <a class="btn btn-secondary navLink" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank" style="background-color: #E05D5D">Resume</a>
         </li>
       </ul>
     </nav>
@@ -102,12 +111,13 @@
 
 
 
-    <div class="p-5 jumbotron text-center bg-image bg-cover" style="background: linear-gradient(rgba(23, 162, 184, 1), rgba(0, 0, 0, 0)), url('https://i.ibb.co/QFKyzs9/mesh-1430107.png');">
+    <div class="p-5 jumbotron text-center bg-image bg-cover" style="background: linear-gradient(rgba(23, 162, 184, 1),
+        rgba(0, 0, 0, 0)), url('https://i.ibb.co/QFKyzs9/mesh-1430107.png'); margin-top: -16px;">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-white">
-                    <h1 class="mb-3"><u>About Devin Baack</u></h1>
-                    <h6>Email | dfbaack@gmail.com</h6>
-                    <h6>Phone Number | (712) 210-5392</h6>
+                    <h1 class="mb-3 shadow">About Devin Baack</h1>
+                    <h5 class="shadow-sm">Email | dfbaack@gmail.com</h5>
+                    <h5 class="shadow-sm">Phone Number | (712) 210-5392</h5>
                 </div>
             </div>
 
@@ -116,11 +126,11 @@
 <body class="bg-info">
     <div class="container-fluid">
         <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-white" >
+                <div class="text-white shadow-sm" >
                     <h3>Devin Baack is a Carroll, Iowa native and currently resides in Ames, Iowa
                         studying Computer Science at Des Moines Area Community College (DMACC). Since 2015, Devin
-                        has gained experience in various occupations such as food, sales, customer service, and
-                        information technology.</h3>
+                        has gained experience in various occupations such as food, sales, customer service,
+                        information technology, and software development.</h3>
 
                     <br>
                     <br>
@@ -128,13 +138,14 @@
                     <h3>Devin attended Iowa State University for two semesters, majoring in Computer Science
                         before transferring to DMACC. Since then, he has completed a Computer Languages Diploma
                         and is currently finishing his remaining 6 credits towards his Associate in Applied Science
-                        Degree in Computer Information Systems, which will be completed in December of 2021.</h3>
+                        Degree in Computer Information Systems, which will be completed in December of 2021.
+                        Devin is currently working as a Software Developer Intern with Accenture.</h3>
 
                     <br>
                     <br>
 
                     <center>
-                        <a class="btn btn-secondary navLink btn-lg" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank">View Resume</a>
+                        <a class="btn btn-secondary navLink btn-lg" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank" style="background-color: #E05D5D">View Resume</a>
                     </center>
 
                     <br>

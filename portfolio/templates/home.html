@@ -32,6 +32,13 @@
       box-shadow: 2px 2px 2px black;
     }
 
+    .shadow {
+        text-shadow: 3px 3px 2px black;
+    }
+
+    .shadow-sm {
+        text-shadow: 1.5px 1.5px black;
+    }
 
     .navLink {
         box-shadow: 2px 2px 2px black;
@@ -44,6 +51,8 @@
         border-bottom: 5px double black;
 
     }
+
+
 
     @media only screen and (max-width: 536px) {
 
@@ -69,6 +78,7 @@
         }
     }
 
+
 </style>
 
 
@@ -78,15 +88,15 @@
       <!-- Links -->
       <ul class="navbar-nav">
           <li class="nav-item">
-          <a class="btn btn-secondary navLink" href="{% url 'home' %}">Home</a>
+          <a class="btn btn-secondary navLink" href="{% url 'home' %}" style="background-color: #E05D5D">Home</a>
         </li>
 
           <li style="padding-left: 20px;" class="nav-item">
-              <a class="btn btn-secondary navLink" href="{% url 'about' %}">About</a>
+              <a class="btn btn-secondary navLink" href="{% url 'about' %}" style="background-color: #E05D5D">About</a>
           </li>
 
           <li style="padding-left: 20px;" class="nav-item">
-          <a class="btn btn-secondary navLink" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank">Resume</a>
+          <a class="btn btn-secondary navLink" href="media/portfolio/Devin_Baack_Resume.pdf" target="_blank" style="background-color: #E05D5D">Resume</a>
         </li>
 
 
@@ -99,14 +109,16 @@
 
 
 
-    <div class="p-5 jumbotron text-center bg-image bg-cover" style="background: linear-gradient(rgba(23, 162, 184, 1), rgba(0, 0, 0, 0)), url('https://i.ibb.co/QFKyzs9/mesh-1430107.png'); ">
+    <div class="p-5 jumbotron text-center bg-image bg-cover"
+         style="background: linear-gradient(rgba(23, 162, 184, 1), rgba(0, 0, 0, 0)), url('https://i.ibb.co/QFKyzs9/mesh-1430107.png');
+                margin-top: -16px;">
          <div class="container">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-white">
-                    <h1 class="mb-3"><u>Devin Baack</u></h1>
-                    <h6 class="mb-4">A native of Carroll, Iowa, Devin Baack currently resides in Ames, Iowa <br> completing
-                        his A.A.S. in Computer Information Systems.</h6>
-                    <h6>Displayed below is a variety of projects developed by Devin, <br>demonstrating his experience and current skillset.</h6>
+                    <h1 class="mb-3 shadow">Devin Baack</h1>
+                    <h6 class="mb-4 shadow-sm">A native of Carroll, Iowa, Devin Baack currently resides in Ames, Iowa <br> completing
+                        his A.A.S. in Computer Information Systems while interning at Accenture.</h6>
+                    <h6 class="shadow-sm">Displayed below is a variety of projects developed by Devin, <br>demonstrating a sample of his experience and current skillset.</h6>
 
                 </div>
             </div>
@@ -120,7 +132,7 @@
             {% for project in projects %}
 
                 <div class="col mb-4" style="padding-top: 10px;">
-                    <div class="card mx-auto" style="width: 25rem; height: 32rem; box-shadow: 5px 5px 5px black;">
+                    <div class="card mx-auto" style="background-color: #F3F2C9; width: 25rem; height: 32rem; box-shadow: 5px 5px 5px black;">
                         <h4 class="card-header">{{ project.title }}</h4>
 
                         {% if project.video|slice:":9" == "https://i"  %}
@@ -130,7 +142,7 @@
                                 <hr class="mt-1">
 
                         {% else %}
-                            <iframe style="height: 18rem;" src="{{ project.video }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe style="height: 18rem;" src="{{ project.video }}?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body text-center">
 
                         {% endif %}
@@ -142,13 +154,14 @@
                             <hr>
 
 <!--                            <script>-->
-                            <button class="btn btn-info" data-toggle="modal" data-target="#myModal{{forloop.counter0}}" >Read More About This Project</button>
+                            <button class="btn shadow-sm" style="background-color: #E05D5D; color: white;" data-toggle="modal"
+                                    data-target="#myModal{{forloop.counter0}}" >Read More About This Project</button>
 <!--                            </script>-->
 <!--                            <noscript>-->
 <!--                                <a class="btn btn-info navLink" href="{% url 'about' %}">Read More About This Project</a>-->
 <!--                            </noscript>-->
 
-                            <a href="{{ project.github }}" target="_blank" class="btn btn-info navLink">GitHub</a>
+                            <a href="{{ project.github }}" style="background-color: #E05D5D; color: white;" target="_blank" class="btn navLink shadow-sm">GitHub</a>
                       </div>
                     </div>
                 </div>
