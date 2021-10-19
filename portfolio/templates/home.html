@@ -42,8 +42,12 @@
 
     .navLink {
         box-shadow: 2px 2px 2px black;
+        transition: all 0.4s ease 0s;
     }
 
+    .navLink:hover {
+        opacity: 0.75;
+    }
 
     .bg-cover {
         background-size: cover !important;
@@ -154,7 +158,7 @@
                             <hr>
 
 <!--                            <script>-->
-                            <button class="btn shadow-sm" style="background-color: #E05D5D; color: white;" data-toggle="modal"
+                            <button class="btn shadow-sm navLink" style="background-color: #E05D5D; color: white;" data-toggle="modal"
                                     data-target="#myModal{{forloop.counter0}}" >Read More About This Project</button>
 <!--                            </script>-->
 <!--                            <noscript>-->
