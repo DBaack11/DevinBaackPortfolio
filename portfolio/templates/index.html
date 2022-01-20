@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Devin Baack</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="media/portfolio/assets/css/main.css" />
+	<link rel="icon" type="image/png" href="media/portfolio/logo-circle.png" />
+
+
+</head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EGY1P9V0V2"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'G-EGY1P9V0V2');
+</script>
+
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<div id="header">
+
+		<div class="top">
+
+			<!-- Logo -->
+			<!-- <div id="logo">
+				<span class="image avatar48"><img src="media/portfolio/images/avatar.jpg" alt="" /></span>
+				<h1 id="title">Devin Baack</h1>
+				<p>Software Developer</p>
+			</div> -->
+			<br />
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+					<br />
+					<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a>
+					</li>
+					<br />
+					<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+					<br />
+					<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a>
+						<br />
+					<li><a href="#resume" id="resume-link"><span class="icon solid fa-paperclip">Resume</span></a>
+					</li>
+				</ul>
+			</nav>
+
+		</div>
+
+		<div class="bottom">
+
+			<!-- Social Icons -->
+			<!-- <ul class="icons">
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+			</ul> -->
+
+		</div>
+
+	</div>
+
+	<!-- Main -->
+	<div id="main">
+
+		<!-- Intro -->
+		<section id="top" class="one dark cover">
+			<div class="container">
+
+				<header>
+					<h2 class="alt" style="text-shadow: 3px 3px 3px black;"><strong>Hi, I'm Devin
+							Baack!</strong><br /></h2>
+					<p>A Software Developer Intern at Accenture, based in Ames, Iowa.<br />
+					</p>
+				</header>
+
+				<!-- <footer>
+					<a href="#portfolio" class="button scrolly">View Resume</a>
+				</footer> -->
+
+			</div>
+		</section>
+
+		<!-- Portfolio -->
+		<section id="portfolio" class="two">
+			<div class="container">
+
+				<header>
+					<h2>Portfolio</h2>
+				</header>
+
+				<p>Displayed below is a variety of projects,<br /> demonstrating a sample of my experience and current
+					skillset.</p>
+
+				<div id="portfolioDiv" class="row">
+					{% for project in projects %}
+					<div id="portfolioDivChild" class="col-6 col-12-mobile">
+						<article class="item"
+							style="background-color: rgb(240, 237, 231); box-shadow: 5px 5px 8px black;">
+							<h4 class="card-header" style="font-weight: bold;">{{ project.title }}</h4>
+							{% if project.video|slice:":9" == "https://i" %}
+							<a href="{{ project.image }}" target="_blank"><img style="height: 14rem;" class="image fit"
+									src="{{ project.video}}" alt="" /></a>
+
+							{% else %}
+							<iframe style="height: 14rem;" class="image fit" src="{{ project.video }}?rel=0"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+							{% endif %}
+							<header style="background-color: rgb(240, 237, 231)">
+
+								<h3 style="font-weight: bold;">Tools: {{ project.tools }}</h3>
+
+								<h3>{{ project.description|safe }}</h3>
+								<hr>
+								<div style="display: flex; justify-content: space-evenly;">
+									<a style="font-weight: bold;" href="" data-toggle="modal"
+										data-target="#myModal{{forloop.counter0}}">Read More
+										About This Project</a>
+
+									<a style="font-weight: bold;" href="{{ project.github }}" target="_blank">GitHub</a>
+								</div>
+							</header>
+						</article>
+
+						<div class="modal fade" id="myModal{{forloop.counter0}}">
+							<div class="modal-dialog">
+								<div class="modal-content">
+
+									<!-- Modal Header -->
+									<div class="modal-header">
+										<h4 class="modal-title">{{ project.title }}</h4>
+										<h4><a href="#" data-dismiss="modal">x</a></h4>
+									</div>
+
+									<!-- Modal body -->
+									<div class="modal-body">
+										<p>{{ project.writeUp|safe }}</p>
+									</div>
+
+									<!-- Modal footer -->
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Close</button>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+					{% endfor %}
+				</div>
+		</section>
+
+		<!-- About Me -->
+		<section id="about" class="three">
+			<div class="container">
+
+				<header>
+					<h2>About Me</h2>
+				</header>
+
+				<p>I am a Carroll, Iowa native and currently reside in Ames, Iowa. I attended Iowa State University for
+					two semesters, majoring in Computer Science before
+					transferring to DMACC. Since then, I have completed a Computer Languages Diploma and an A.A.S.
+					Degree in Computer
+					Information Systems. I am currently working as a
+					Software Developer Intern at Accenture.</p>
+				<p>I am always eager to learn and am able to adapt quickly to new environments and situations. I also am
+					an
+					effective, detail-oriented problem solver that works well with others to achieve any given goal.</p>
+
+			</div>
+		</section>
+
+		<!-- Contact -->
+		<section id="contact" class="four">
+			<div class="container">
+
+				<header>
+					<h2>Contact</h2>
+				</header>
+
+				<h3>dfbaack@gmail.com | (712) 210-5392</h3>
+				<br />
+				<a style="border-bottom: none;" href="https://github.com/DBaack11"
+					class="icon brands fa-github fa-4x"><span class="label">Github</span></a>
+				<a style="border-bottom: none;" href="https://www.linkedin.com/in/devinbaack/"
+					class="icon brands fa-linkedin fa-4x"><span class="label">LinkedIn</span></a>
+
+
+				<!-- <form method="post" action="#">
+					<div class="row">
+						<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+						<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
+						<div class="col-12">
+							<textarea name="message" placeholder="Message"></textarea>
+						</div>
+						<div class="col-12">
+							<input type="submit" value="Send Message" />
+						</div>
+					</div>
+				</form> -->
+
+			</div>
+		</section>
+
+		<!-- Resume -->
+		<section id="resume" class="three">
+			<div class="container">
+
+				<header>
+					<h2>Resume</h2>
+				</header>
+
+				<footer>
+					<a href="href=media/portfolio/DevinBaackResume.pdf" target="_blank" class="button scrolly">View My
+						Resume</a>
+				</footer>
+
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<div id="footer">
+
+		<!-- Copyright -->
+		<!-- <ul class="copyright">
+			<li>&copy; Devin Baack. All rights reserved.</li>
+			<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+		</ul> -->
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="media/portfolio/assets/js/jquery.min.js"></script>
+	<script src="media/portfolio/assets/js/jquery.scrolly.min.js"></script>
+	<script src="media/portfolio/assets/js/jquery.scrollex.min.js"></script>
+	<script src="media/portfolio/assets/js/browser.min.js"></script>
+	<script src="media/portfolio/assets/js/breakpoints.min.js"></script>
+	<script src="media/portfolio/assets/js/util.js"></script>
+	<script src="media/portfolio/assets/js/main.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
