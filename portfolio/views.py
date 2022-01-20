@@ -6,7 +6,3 @@ from .models import Project
 def home(request):
     projects = Project.objects.all()
     return render(request, 'index.html', {'projects': projects})
-
-
-def about(request):
-    return render(request, 'about.html')
