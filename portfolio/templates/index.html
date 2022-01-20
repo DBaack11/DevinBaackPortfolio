@@ -24,6 +24,17 @@
 	gtag('config', 'G-EGY1P9V0V2');
 </script>
 
+<style>
+	.portfolioColumn {
+		width: 50%;
+	}
+
+	@media screen and (max-width: 796px) {
+		.portfolioColumn {
+			width: 100%;
+		}
+	}
+</style>
 
 <body class="is-preload">
 
@@ -106,9 +117,9 @@
 				<p>Displayed below is a variety of projects,<br /> demonstrating a sample of my experience and current
 					skillset.</p>
 
-				<div id="portfolioDiv" class="row">
+				<div class="row ">
 					{% for project in projects %}
-					<div id="portfolioDivChild" class="col-6 col-12-mobile">
+					<div class="portfolioColumn">
 						<article class="item"
 							style="background-color: rgb(240, 237, 231); box-shadow: 5px 5px 8px black;">
 							<h4 class="card-header" style="font-weight: bold;">{{ project.title }}</h4>

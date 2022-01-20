@@ -1527,6 +1527,10 @@ input, select, textarea {
 					order: -1;
 				}
 
+				.row > .col-6 {
+					width: 100%;
+				}
+
 				.row > .col-1-mobile {
 					width: 8.33333%;
 				}
